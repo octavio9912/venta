@@ -3,31 +3,27 @@ import LoginForm from './Components/LoginForm/LoginForm';
 import Navbar from './Components/Navbar/Navbar';
 import Inicio from './Components/Inicio/Inicio';
 import Registrate from './Components/Registrate/Registrate';
+import Footer from './Components/Footer/Footer';
 
 
 function App() {
   return (
-    <div>
-      
+    <header>
       <Router>
-        <Navbar/>
+        <Navbar />
         <Routes>
           <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/Inicio" element={<Inicio />} />
           <Route path="/Registrate" element={<Registrate />} />
-      </Routes>
+        </Routes>
+     
       </Router>
-      <div className='App'>
- <footer/>
-</div>
-    </div>
+
+      <Footer/>
+
+    </header>
     
     
   );
 }
-
-
-
-
-
 export default App;
