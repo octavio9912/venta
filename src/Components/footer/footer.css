@@ -11,9 +11,14 @@ footer h4 {
     font-size: 20px;
 }
 
+footer h5 {
+    font-size: 30px;
+}
+
 footer li {
     width: fit-content;
     transition: transform .3s ease;
+    list-style-type: none; 
 }
 
 footer a {
@@ -23,7 +28,7 @@ footer a {
 }
 
 .explore li:hover, .projects li:hover, .services li:hover, footer a:not(.social-link):hover{
-    color: brown;
+    color: rgb(75, 75, 75);
     transform: translateX(10px) translateY(-2px);
 }
 
@@ -43,6 +48,16 @@ footer a {
 }
 
 .explore ul li {
+    margin: 20px 0;
+}
+
+.GDL {
+    flex-grow: 1;
+    flex-basis: 60%;
+    color: rgb(255, 166, 0);
+}
+
+.GDL ul li {
     margin: 20px 0;
 }
 
@@ -81,7 +96,7 @@ footer a {
 }
 
 .socials a:hover {
-    color: brown;
+    color: rgb(255, 145, 0);
 }
 
 .copyright {

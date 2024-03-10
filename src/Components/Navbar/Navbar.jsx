@@ -13,7 +13,7 @@ return (
   <nav  class="navbar">
     
     <div class="caja1" >
-      <Link to="/" className="title">
+      <Link to="Carousel" className="title">
       JGL Shop
       </Link>
     </div>
@@ -27,13 +27,13 @@ return (
     <div  class="caja" >
       <ul className={menuOpen ? "open" : ""}>
         <li>
-          <Link className="nav-link" to="/inicio" >Categorias</Link>
+          <Link className="nav-link" to="/Cards" >Categorias</Link>
         </li>
         <li>
-          <Link className="nav-link" to="/inicio" >Ofertas</Link>
+          <Link className="nav-link" to="/Inicio" >Ofertas</Link>
         </li>
         <li>
-          <Link className="nav-link" to="/inicio" >Contactos</Link>
+          <Link className="nav-link" to="/Carousel" >Contactos</Link>
         </li>
       </ul>
     </div>
