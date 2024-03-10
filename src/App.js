@@ -10,6 +10,7 @@ import Inicio from './Paginas/Inicio';
 import Ofertas from './Paginas/Ofertas';
 import Categorias from './Paginas/Categorias';
 
+
 function App() {
   return (
     <header>
