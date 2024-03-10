@@ -9,7 +9,6 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 
-
 const Footer = () => {
   return (
     <footer>
