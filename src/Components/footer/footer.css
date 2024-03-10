@@ -19,7 +19,6 @@ footer h5 {
 footer li {
     width: fit-content;
     transition: transform .3s ease;
-    list-style-type: none; 
 }
 
 footer a {
@@ -30,7 +29,6 @@ footer a {
 
 .explore li:hover, .projects li:hover, .services li:hover, footer a:not(.social-link):hover{
     color: rgb(255, 166, 0);
-    color: rgb(75, 75, 75);
     transform: translateX(10px) translateY(-2px);
 }
 
@@ -100,7 +98,6 @@ footer a {
 
 .socials a:hover {
     color: rgb(255, 166, 0);
-    color: rgb(255, 145, 0);
 }
 
 .copyright {
