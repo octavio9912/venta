@@ -1,0 +1,14 @@
+.Cards {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos hagan un salto de línea cuando no quepan en la misma fila */
+    gap: 5%; /* Espacio de separación entre los elementos */
+    margin-bottom: 20px; /* Espacio de separación por debajo del contenedor */
+    margin-top: 20px;
+  }
+  
+  .BasicExample {
+    flex: 1; /* Para que cada elemento ocupe el mismo ancho y se ajuste automáticamente */
+    margin-right: 10%; /* Espacio entre los elementos */
+    margin-bottom: 15px; /* Espacio debajo de los elementos */
+    margin-top: 20px;
+  }

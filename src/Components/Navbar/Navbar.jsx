@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './Navbar.css'
 import {Link} from 'react-router-dom'
 import { FaUserAlt } from "react-icons/fa";
@@ -13,7 +12,7 @@ return (
   <nav  class="navbar">
     
     <div class="caja1" >
-      <Link to="/" className="title">
+      <Link to="Inicio" className="title">
       JGL Shop
       </Link>
     </div>
@@ -27,13 +26,13 @@ return (
     <div  class="caja" >
       <ul className={menuOpen ? "open" : ""}>
         <li>
-          <Link className="nav-link" to="/inicio" >Categorias</Link>
+          <Link className="nav-link" to="/Categorias" >Categorias</Link>
         </li>
         <li>
-          <Link className="nav-link" to="/inicio" >Ofertas</Link>
+          <Link className="nav-link" to="/Ofertas" >Ofertas</Link>
         </li>
         <li>
-          <Link className="nav-link" to="/inicio" >Contactos</Link>
+          <Link className="nav-link" to="/Contactos" >Contactos</Link>
         </li>
       </ul>
     </div>

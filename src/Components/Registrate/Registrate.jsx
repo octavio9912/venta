@@ -1,8 +1,5 @@
 import React from 'react'
 import './Registrate.css'
-import { FaUserAlt } from "react-icons/fa";
-import { FaLock } from "react-icons/fa";
-
 
 
 const Register = () => {

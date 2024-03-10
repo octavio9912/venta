@@ -1,0 +1,15 @@
+.content-Inicio {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 10%; /* Márgenes a los costados */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content-Inicio > div {
+    margin-bottom: .5%px; /* Espacio entre los elementos */
+  }
+  
+ 

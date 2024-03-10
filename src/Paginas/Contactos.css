@@ -1,0 +1,28 @@
+.content {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 10%; /* Márgenes a los costados */
+
+  }
+  
+  .text {
+    flex: 1;
+    text-align: left;
+    margin-right: 10%; 
+  }
+  
+  
+  .image {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    align-items: center;
+  }
+  
+  .image img {
+    max-width: 100%;
+    height: auto;
+   
+  }
+  
