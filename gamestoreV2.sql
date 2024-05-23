@@ -1,13 +1,13 @@
--- MariaDB dump 10.19  Distrib 10.4.28-MariaDB, for osx10.10 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.36, for Linux (x86_64)
 --
 -- Host: localhost    Database: gamestore
 -- ------------------------------------------------------
--- Server version	10.4.28-MariaDB
+-- Server version	8.0.36-0ubuntu0.22.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,14 +21,14 @@
 
 DROP TABLE IF EXISTS `accessories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `accessories` (
-  `accessoryID` int(11) NOT NULL AUTO_INCREMENT,
-  `accessoryTitle` varchar(200) NOT NULL,
-  `accessoryImage` varchar(500) NOT NULL,
-  `accessoryManufacturer` varchar(200) NOT NULL,
-  `accessoryCategories` varchar(200) NOT NULL,
-  `accessoryDescription` varchar(1000) NOT NULL,
+  `accessoryID` int NOT NULL AUTO_INCREMENT,
+  `accessoryTitle` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `accessoryImage` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `accessoryManufacturer` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `accessoryCategories` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `accessoryDescription` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`accessoryID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -49,14 +49,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `consoles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `consoles` (
-  `consoleID` int(11) NOT NULL AUTO_INCREMENT,
-  `consoleTitle` varchar(200) NOT NULL,
-  `consoleImage` varchar(500) NOT NULL,
-  `consoleManufacturer` varchar(200) NOT NULL,
-  `consoleCategories` varchar(200) NOT NULL,
-  `consoleDescription` varchar(1000) NOT NULL,
+  `consoleID` int NOT NULL AUTO_INCREMENT,
+  `consoleTitle` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `consoleImage` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `consoleManufacturer` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `consoleCategories` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `consoleDescription` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`consoleID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -77,16 +77,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `games`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `games` (
-  `gameID` int(11) NOT NULL AUTO_INCREMENT,
-  `gameTitle` varchar(200) NOT NULL,
-  `gameImage` varchar(500) NOT NULL,
-  `gameDeveloper` varchar(200) NOT NULL,
-  `gameDesigner` varchar(200) NOT NULL,
-  `gameReleaseDate` varchar(200) NOT NULL,
-  `gameCategories` varchar(200) NOT NULL,
-  `gameDescription` varchar(1000) NOT NULL,
+  `gameID` int NOT NULL AUTO_INCREMENT,
+  `gameTitle` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `gameImage` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `gameDeveloper` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `gameDesigner` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `gameReleaseDate` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `gameCategories` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `gameDescription` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`gameID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -107,14 +107,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `userId` int(11) NOT NULL AUTO_INCREMENT,
-  `userName` varchar(100) NOT NULL,
-  `userMail` varchar(200) NOT NULL,
-  `userPassword` varchar(50) NOT NULL,
+  `userId` int NOT NULL AUTO_INCREMENT,
+  `userName` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `userMail` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `userPassword` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `creditCard` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `expirationDate` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ccv` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,7 +126,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'armando','armando@gmail.com','Mayusculas12.');
+INSERT INTO `users` VALUES (1,'armando','armando@gmail.com','Mayusculas12.',NULL,NULL,NULL),(2,'John Doe','john.doe@example.com','T9v!k2x@#q','4539876453201476','2029-11-21','123'),(3,'John Doe','john.doe@example.com','T9v!k2x@#q','4539876453201476','2029-11-21','123'),(4,'Lucy Williams','lucy.williams@example.com','h!G3k#5Lm1','4539876453201476','2027-06-14','745'),(5,'Mark Jones','mark.jones@example.com','A8!b@3sLq1','6011000990139424','2026-09-30','432');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -136,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-22 18:08:40
+-- Dump completed on 2024-05-23  9:08:45

@@ -14,7 +14,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"mail\": \"armando@gmail.com\",\n    \"password\": \"Mayusculas12.\"\n}",
+					"raw": "{\n    \"mail\": \"john.doe@example.com \",\n    \"password\": \"T9v!k2x@#q\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -29,6 +29,34 @@
 					"port": "3000",
 					"path": [
 						"login"
+					]
+				},
+				"description": "Permite a los usuarios autenticarse y obtener un token JWT que puede ser utilizado para acceder a los otros endpoints protegidos de la\n\n\\-La solicitud requiere los parámetros \\`mail\\` y \\`password\\` en el cuerpo de la solicitud.\n\n\\- La respuesta incluye un token JWT que debe ser usado en los headers de autorización para las solicitudes posteriores.”"
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mail\": \"armando@gmail.com\",\n    \"password\": \"Mayusculas12.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signin"
 					]
 				},
 				"description": "Permite a los usuarios autenticarse y obtener un token JWT que puede ser utilizado para acceder a los otros endpoints protegidos de la\n\n\\-La solicitud requiere los parámetros \\`mail\\` y \\`password\\` en el cuerpo de la solicitud.\n\n\\- La respuesta incluye un token JWT que debe ser usado en los headers de autorización para las solicitudes posteriores.”"
