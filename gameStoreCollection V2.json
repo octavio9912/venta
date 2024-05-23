@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "4faaa61b-9f18-4d3e-a991-47e7311a7f3d",
+		"name": "gameStore",
+		"description": "La API de GameStore proporciona varias operaciones para gestionar y acceder a datos relacionados con juegos, consolas y accesorios. Esta API está diseñada para permitir a los usuarios autenticarse y realizar solicitudes para obtener listas de juegos, consolas y accesorios disponibles en la tienda.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23554282"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mail\": \"armando@gmail.com\",\n    \"password\": \"Mayusculas12.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Permite a los usuarios autenticarse y obtener un token JWT que puede ser utilizado para acceder a los otros endpoints protegidos de la\n\n\\-La solicitud requiere los parámetros \\`mail\\` y \\`password\\` en el cuerpo de la solicitud.\n\n\\- La respuesta incluye un token JWT que debe ser usado en los headers de autorización para las solicitudes posteriores.”"
+			},
+			"response": []
+		},
+		{
+			"name": "get-games",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.bG9nZ2Vk.2TXgQ1bXP8-dKKkmGTh_dLPunh-rv9ziKbXx77y9WKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/categories/get-games/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"categories",
+						"get-games",
+						""
+					]
+				},
+				"description": "Devuelve una lista de todos los juegos disponibles en la tienda.\n\n\\-Requiere un token JWT válido en el header de autorización.  \n\\-La respuesta incluye una lista de objetos de juegos."
+			},
+			"response": []
+		},
+		{
+			"name": "get-consoles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.bG9nZ2Vk.2TXgQ1bXP8-dKKkmGTh_dLPunh-rv9ziKbXx77y9WKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/categories/get-consoles/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"categories",
+						"get-consoles",
+						""
+					]
+				},
+				"description": "Devuelve una lista de todas las consolas disponibles en la tienda.\n\n\\-Requiere un token JWT válido en el header de autorización.  \n\\-La respuesta incluye una lista de objetos de consolas."
+			},
+			"response": []
+		},
+		{
+			"name": "get-accessories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.bG9nZ2Vk.2TXgQ1bXP8-dKKkmGTh_dLPunh-rv9ziKbXx77y9WKA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/categories/get-accessories/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"categories",
+						"get-accessories",
+						""
+					]
+				},
+				"description": "Devuelve una lista de todos los accesorios disponibles en la tienda.\n\n\\-Requiere un token JWT válido en el header de autorización.  \n\\-La respuesta incluye una lista de objetos de accesorios."
+			},
+			"response": []
+		}
+	]
+}
