@@ -1,7 +1,7 @@
 import React from 'react'
 import './Inicio.css'
 import Carousell from '../Components/Carousel/Carousel'
-
+import Cargando from '../Components/Cargando/Cargando';
 
 const Contactos = () => {
   return (
@@ -13,6 +13,7 @@ const Contactos = () => {
 
     <div class="carousel">
         <Carousell/>
+        <Cargando/> 
     </div>
     
   </section>

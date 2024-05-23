@@ -3,7 +3,7 @@ const mysqlConnection = mysql.createConnection(
 {
 host:'localhost',
 user: 'root',
-password: 'Mayusculas12.',
+password: '',
 database: 'gamestore',
 port: '3306'
 });

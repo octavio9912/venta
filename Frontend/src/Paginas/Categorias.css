@@ -1,14 +1,75 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f8f9fa; /* Fondo gris claro para el cuerpo */
+}
+
+/* Estilos para la sección de contenido */
+.content-Inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 20px; /* Márgenes a los costados */
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-Inicio h2 {
+  margin-bottom: 20px;
+}
+
+/* Estilos para las tarjetas */
 .Cards {
-    display: flex;
-    flex-wrap: wrap; /* Permitir que los elementos hagan un salto de línea cuando no quepan en la misma fila */
-    gap: 5%; /* Espacio de separación entre los elementos */
-    margin-bottom: 20px; /* Espacio de separación por debajo del contenedor */
-    margin-top: 20px;
-  }
-  
-  .BasicExample {
-    flex: 1; /* Para que cada elemento ocupe el mismo ancho y se ajuste automáticamente */
-    margin-right: 10%; /* Espacio entre los elementos */
-    margin-bottom: 15px; /* Espacio debajo de los elementos */
-    margin-top: 20px;
-  }
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en múltiples líneas */
+  gap: 20px; /* Espacio entre las tarjetas */
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+}
+
+.Cards > div {
+  background-color: #fff; /* Fondo blanco para las tarjetas */
+  border: 1px solid #ddd; /* Borde gris claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para las tarjetas */
+  flex: 1 1 calc(25% - 20px); /* Hace que cada tarjeta ocupe el 25% del contenedor con espacio entre ellas */
+  max-width: calc(25% - 20px); /* Máximo ancho del 25% menos el espacio entre ellas */
+  min-width: 200px; /* Ancho mínimo para las tarjetas */
+  margin-bottom: 20px; /* Espacio en la parte inferior de las tarjetas */
+  padding: 20px; /* Espacio interno de las tarjetas */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* Transición para el efecto de zoom */
+}
+
+.Cards img {
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  height: auto;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease-in-out; /* Transición para el efecto de zoom */
+}
+
+.Cards > div:hover img {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al 110% */
+}
+
+/* Estilos para los enlaces de navegación (opcional) */
+.social-link {
+  color: #333;
+  font-size: 24px;
+  margin: 0 10px;
+}
+
+.social-link:hover {
+  color: #007bff;
+}

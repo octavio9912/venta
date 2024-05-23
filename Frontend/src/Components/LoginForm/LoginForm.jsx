@@ -48,33 +48,31 @@ const LoginForm = () => {
 
   return (<>
     <div className='wrapper'>
- 
-        <h1>Login</h1>
-        <div className='input-box'>
-            <input onChange={handlerMail} type='text' placeholder='Username' required/>
-            <FaUserAlt className='icon'/>
+        <div className="bordered-div">
+            <h1>Login</h1>
+            <div className='input-box'>
+                <input onChange={handlerMail} type='text' placeholder='Username' required/>
+                <FaUserAlt className='icon'/>
 
-        </div>
-        <div className='input-box'>
-            <input onChange={handlerPassword} type='password' placeholder='Password' required />
-            <FaLock className='icon'/>
-        </div>
+            </div>
+            <div className='input-box'>
+                <input onChange={handlerPassword} type='password' placeholder='Password' required />
+                <FaLock className='icon'/>
+            </div>
 
-        <div className='remember-forgot'>
-            <label><input type='checkbox' />Recordar </label>
-            <a href='#'>No recuerdas la contrasena?</a>
+            <div className='remember-forgot'>
+                <label><input type='checkbox' />Recordar </label>
+                <a href='#'>No recuerdas la contrasena?</a>
+                
+            </div>
+
+            <button type='submit' onClick={handlerLogin}>Login</button>
             
-        </div>
-
-        <button type='submit' onClick={handlerLogin}>Login</button>
-        
-        <div className='register-link'>
-           
-            <p> Registrate</p>
+            <div className='register-link'>
+                <p>   <Link className="nav-link" to="/registrate" >Registrate</Link></p>
+            </div>
         </div>
     </div>
-    {/*Mapa de google maps: https://embedgooglemaps.com/es/ */}
-    <iframe id="map-canvas" class="map_part" width="600"  height="450"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=slp alameda&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">Powered by <a href="https://embedgooglemaps.com">embed google maps</a> and <a href="http://eucasinos.se/">eu casino</a></iframe>
     </>
   )
 }

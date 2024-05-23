@@ -9,6 +9,7 @@ import Contactos from './Paginas/Contactos';
 import Inicio from './Paginas/Inicio';
 import Ofertas from './Paginas/Ofertas';
 import Categorias from './Paginas/Categorias';
+import Cargando from './Components/Cargando/Cargando';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/Inicio" element={<Inicio />} />
           <Route path="/Ofertas" element={<Ofertas />} />
           <Route path="/Categorias" element={<Categorias />} />
+          <Route path="/Cargando" element={<Cargando /> } />
         </Routes>
       </Router>
     

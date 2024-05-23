@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'; // Importa React y v
 import './Categorias.css'; // Importa un archivo de estilos
 import BasicExample from '../Components/Cards/Cards'; // Importa un componente llamado BasicExample de otro archivo
 import getGames from '../API/getGames'; // Importa una función llamada getGames desde un archivo de API
+import Cargando from '../Components/Cargando/Cargando';
 
 const Categorias = () => { // Define un componente funcional llamado Categorias
 //Variables useState
@@ -16,14 +17,14 @@ const Categorias = () => { // Define un componente funcional llamado Categorias
         setGames(resultado.data); // Actualiza el estado games con los datos obtenidos
         console.log({ 'mi data: ': resultado.data }); // Imprime los datos obtenidos en la consola
         setIsLoading(false); // Actualiza el estado isLoading a false para indicar que la carga ha finalizado
-      }, 1000); // Establece el retardo en 1000ms (1 segundo)
+      }, 3000); // Establece el retardo en 1000ms (1 segundo)
     });
   }, []); // Ejecuta el efecto solo una vez, al montar el componente (deps vacío)
   
   //Loader
   if (isLoading) { // Comprueba si isLoading es true
-    return <> // Devuelve un fragmento de JSX
-      Esta cargando esta madre ! {'>.<'} // Muestra un mensaje de carga
+    return <> 
+      <Cargando/> 
     </>
   } else { // Si isLoading es false (carga finalizada)
 
@@ -49,7 +50,7 @@ const Categorias = () => { // Define un componente funcional llamado Categorias
         </div>
 
         <div class="Cards"> 
-          {listGames()} P{/* Llama a la función listGames para mostrar la lista de juegos*/}
+          {listGames()} {/* Llama a la función listGames para mostrar la lista de juegos*/}
         </div>
 
       </section>

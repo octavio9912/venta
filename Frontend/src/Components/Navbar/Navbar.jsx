@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import './Navbar.css'
 import {Link, useNavigate} from 'react-router-dom'
-import { FaUserAlt, FaPowerOff } from "react-icons/fa";
-import { MdLocalGroceryStore } from "react-icons/md";
-
+import { FaUserAlt, FaPowerOff, FaShoppingCart  } from "react-icons/fa";
 
 const Navbar  = () => {
 const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +19,7 @@ return (
     
     <div class="caja1" >
       <Link to="Inicio" className="title">
-      JGL Shop
+      GDL Shop
       </Link>
     </div>
 
@@ -47,9 +45,9 @@ return (
 
     <div  id="tienda" class="caja2" >
       <ul>
-        <li><Link className="nav-link" to="/LoginForm" > {localStorage.getItem('user') || 'Sesion no iniciada'}  <FaUserAlt className='icon'/>  </Link></li>
-        <li  hidden={localStorage.getItem('token')? false : true} onClick={handlerLogout}> <FaPowerOff className='icon'/> </li>
-        <li  ><Link className="nav-link" to="/LoginForm" >    <MdLocalGroceryStore />  </Link></li>
+        <li><Link className="nav-link" to="/LoginForm" > {localStorage.getItem('user') || 'Inicia sesión '}  <FaUserAlt className='icon'/>  </Link></li>
+        <li><Link className="nav-link" to="/LoginForm" >  <FaShoppingCart />  </Link></li>
+        <li hidden={localStorage.getItem('token')? false : true} onClick={handlerLogout}> <Link className="nav-link" > <FaPowerOff className='icon'/> </Link> </li>
       </ul>
    
     </div>

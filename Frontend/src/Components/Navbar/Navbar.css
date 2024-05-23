@@ -44,7 +44,7 @@ nav .title {
   margin: 1rem;
   font-weight: bold;
   text-decoration: none;
-  color: rgb(255, 153, 0);
+  color: rgb(255, 136, 0);
   justify-content: space-between;
 }
 
@@ -71,7 +71,7 @@ nav ul li a {
 nav ul li a:not(.active):hover {
   transition: transform 0.3s; 
   transform: scale(1.1);
-  color:#3a3a3ab2;
+  color:#ffae00b2;
 }
 
 nav .menu {
