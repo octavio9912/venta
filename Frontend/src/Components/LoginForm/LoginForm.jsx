@@ -46,7 +46,7 @@ const LoginForm = () => {
         setPassword(event.target.value);
     }
 
-  return (
+  return (<>
     <div className='wrapper'>
  
         <h1>Login</h1>
@@ -73,6 +73,9 @@ const LoginForm = () => {
             <p> Registrate</p>
         </div>
     </div>
+    {/*Mapa de google maps */}
+    <iframe id="map-canvas" class="map_part" width="600"  height="450"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=slp alameda&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">Powered by <a href="https://embedgooglemaps.com">embed google maps</a> and <a href="http://eucasinos.se/">eu casino</a></iframe>
+    </>
   )
 }
 
