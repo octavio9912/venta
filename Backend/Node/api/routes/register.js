@@ -9,26 +9,21 @@ const jwt = require('jsonwebtoken');
 /*Make a route with the post method called singin*/
 router.post('/', (req,res) => {
 /*Saves de parameters 'Mail' and 'Password' from the request body*/
-    const {mail, password} = req.body;
+    const {mail,completeName, password, creditCard, expirationDate, ccv} = req.body;
     try{
 /*Specifies the query and send the body arguments as parameters*/ 
-    mysqlConnection.query('select userMail, userName, creditCard, expirationDate, ccv from users where userMail = ? and userPassword = ?',
-    [mail,password],
+    mysqlConnection.query('INSERT INTO users (userMail, userName, userPassword, creditCard, expirationDate, ccv) VALUES (?, ?, ?, ?, ?, ?);',
+    [mail,completeName, password, creditCard, expirationDate, ccv],
      (error,rows,fields) => {
 /*Verify if and error is present, if no procceds*/
         if(!error){
 /*If the content of the rows is greater than 0 save the results on 'data', otherwise send a reply with 'Invalid data'*/            
-            if(rows.length > 0){
+
                 //console.log(JSON.stringify(rows[0].name));
-                let data = "logged";
+                let data = "inserted fields";
 /*Encrypts the stored data on a variable called token with a secret word*/
-                const token = jwt.sign(data,'Testing');
 /*Send a reply with the encrypted token*/
-                res.json({"token":token,"user":rows[0].userName,"creditCard":rows[0].creditCard,"expirationDate": rows[0].expirationDate, "ccv": rows[0].ccv});
-            }else{
-                res.json('Invalid data');
-                console.log(rows);
-            }
+                res.json({'operation': data});
         }else{
             console.log(error);
         }

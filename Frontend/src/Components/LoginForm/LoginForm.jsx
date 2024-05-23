@@ -20,6 +20,9 @@ const LoginForm = () => {
                     console.log({"Respuesta del backend":respuesta.data})
                     localStorage.setItem('token', respuesta.data.token);
                     localStorage.setItem('user', respuesta.data.user);
+                    localStorage.setItem('credit-card', respuesta.data.creditCard);
+                    localStorage.setItem('expiration-date', respuesta.data.expirationDate);
+                    localStorage.setItem('ccv', respuesta.data.ccv);
                     setTimeout(() => {
                         navigate(redireccion)
                     }, 200)

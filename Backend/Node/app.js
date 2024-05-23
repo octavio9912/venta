@@ -17,6 +17,9 @@ app.use('/test', test);
 const categories = require('./api/routes/categories');
 app.use('/categories', categories);
 
+const signin = require('./api/routes/register');
+app.use('/signin', signin);
+
 
 
 module.exports = app;
