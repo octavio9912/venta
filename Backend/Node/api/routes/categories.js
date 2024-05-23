@@ -4,8 +4,7 @@ const verifyToken = require('../functions/verifyToken');
 const mysqlConnection = require('../connection/connection');
 const { rawListeners } = require('../connection/connection');
 
-router.get('/get-games',verifyToken.verify,(req,res)=>{
-    if(req.data === 'logged'){
+router.get('/get-games',(req,res)=>{
         mysqlConnection.query('select * from games',(error, rows, fields)=>{
             if(!error){
                 res.json(rows);
@@ -13,14 +12,11 @@ router.get('/get-games',verifyToken.verify,(req,res)=>{
                 console.log(error);
             }
         })
-    }else{
-        res.json('You dont have enogh permisions');
-    }
 });
 
 
-router.get('/get-consoles',verifyToken.verify,(req,res)=>{
-    if(req.data === 'logged'){
+router.get('/get-consoles',(req,res)=>{
+
         mysqlConnection.query('select * from consoles',(error, rows, fields)=>{
             if(!error){
                 res.json(rows);
@@ -28,13 +24,10 @@ router.get('/get-consoles',verifyToken.verify,(req,res)=>{
                 console.log(error);
             }
         })
-    }else{
-        res.json('You dont have enogh permisions');
-    }
 });
 
-router.get('/get-accessories',verifyToken.verify,(req,res)=>{
-    if(req.data === 'logged'){
+router.get('/get-accessories',(req,res)=>{
+
         mysqlConnection.query('select * from accessories',(error, rows, fields)=>{
             if(!error){
                 res.json(rows);
@@ -42,9 +35,6 @@ router.get('/get-accessories',verifyToken.verify,(req,res)=>{
                 console.log(error);
             }
         })
-    }else{
-        res.json('You dont have enogh permisions');
-    }
 });
 
 
