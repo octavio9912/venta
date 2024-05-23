@@ -1,5 +1,5 @@
 import React from 'react'
-import './Footer.css'
+import './footer.css'
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import {Link} from 'react-router-dom'

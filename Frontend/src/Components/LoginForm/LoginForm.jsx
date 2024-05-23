@@ -3,20 +3,57 @@ import './LoginForm.css'
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import {Link} from 'react-router-dom'
+import { useState } from "react";
+import login from '../../API/login';
+import { useNavigate } from 'react-router-dom';
 
 
 const LoginForm = () => {
+    const navigate = useNavigate();
+    const [mail, setMail] = useState('')
+    const [password, setPassword] = useState('')
+    const redireccion = '/inicio'
+    const handlerLogin = () => {
+        try {
+            login(mail, password).then((respuesta) => {
+                if(respuesta.data.token != null){
+                    console.log({"Respuesta del backend":respuesta.data})
+                    localStorage.setItem('token', respuesta.data.token);
+                    localStorage.setItem('user', respuesta.data.user);
+                    setTimeout(() => {
+                        navigate(redireccion)
+                    }, 200)
+
+                }else{
+                    console.log(respuesta.data)
+                }
+
+            })
+        } catch (error) {
+            console.log(error)
+        }
+        
+    }
+
+    const handlerMail = (event) => {
+        setMail(event.target.value);
+    }
+
+    const handlerPassword = (event) => {
+        setPassword(event.target.value);
+    }
+
   return (
     <div className='wrapper'>
-        <form action=''>
+ 
         <h1>Login</h1>
         <div className='input-box'>
-            <input type='text' placeholder='Username' required/>
+            <input onChange={handlerMail} type='text' placeholder='Username' required/>
             <FaUserAlt className='icon'/>
 
         </div>
         <div className='input-box'>
-            <input type='password' placeholder='Password' required />
+            <input onChange={handlerPassword} type='password' placeholder='Password' required />
             <FaLock className='icon'/>
         </div>
 
@@ -26,14 +63,12 @@ const LoginForm = () => {
             
         </div>
 
-        <button type='submit' > <Link className="nav-link" to="/Registrate" ></Link>Login</button>
+        <button type='submit' onClick={handlerLogin}>Login</button>
         
         <div className='register-link'>
            
-            <p> <Link className="nav-link" to="/Registrate" >Registrate</Link></p>
+            <p> Registrate</p>
         </div>
-
-        </form>
     </div>
   )
 }

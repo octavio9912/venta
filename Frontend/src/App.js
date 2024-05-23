@@ -3,7 +3,7 @@ import LoginForm from './Components/LoginForm/LoginForm';
 import Navbar from './Components/Navbar/Navbar';
 import Carousel from './Components/Carousel/Carousel';
 import Registrate from './Components/Registrate/Registrate';
-import Footer from './Components/Footer/Footer';
+import Footer from './Components/footer/footer';
 import Cards from './Components/Cards/Cards';
 import Contactos from './Paginas/Contactos';
 import Inicio from './Paginas/Inicio';
