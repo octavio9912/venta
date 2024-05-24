@@ -73,3 +73,25 @@ body {
 .social-link:hover {
   color: #007bff;
 }
+
+/* Media Queries para un diseño adaptativo */
+@media (max-width: 1200px) {
+  .Cards > div {
+    flex: 1 1 calc(33.33% - 20px); /* Ocupa el 33.33% del contenedor */
+    max-width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 992px) {
+  .Cards > div {
+    flex: 1 1 calc(50% - 20px); /* Ocupa el 50% del contenedor */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .Cards > div {
+    flex: 1 1 calc(100% - 20px); /* Ocupa el 100% del contenedor */
+    max-width: calc(100% - 20px);
+  }
+}
