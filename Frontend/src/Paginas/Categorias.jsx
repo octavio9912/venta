@@ -13,9 +13,8 @@ const Categorias = () => { // Define un componente funcional llamado Categorias
   const [games, setGames] = useState([]); // Declara un estado llamado games con un array vacío como valor inicial
   const [isLoading, setIsLoading] = useState(true); // Declara un estado llamado isLoading con true como valor inicial
   const [consoles, setConsoles] = useState([]); // Declara un estado llamado games con un array vacío como valor inicial
-  const [accessories, setAccessories] = useState([]); // Declara un estado llamado games con un array vacío como valor inicial
+  const [accessories, setAccessories] = useState([]); // Declara un estado llamado games con un array vacío como valor inicia
 
-  //UseEffects
   useEffect(() => { // Utiliza el hook useEffect para realizar efectos secundarios en el componente
     getGames().then((resultado) => { // Llama a la función getGames y maneja el resultado
       setTimeout(() => { // Establece un retardo de 1000ms antes de actualizar el estado

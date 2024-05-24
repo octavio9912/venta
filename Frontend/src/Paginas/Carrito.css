@@ -1,0 +1,29 @@
+/* Carrito.css */
+
+.carrito-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .carrito-item {
+    background-color: #ffffff; 
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .carrito-item img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
+  }
+  
+  .carrito-item h3 {
+    margin-top: 0;
+  }
+  
+  .carrito-item p {
+    margin: 5px 0;
+  }
+  

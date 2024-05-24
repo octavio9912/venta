@@ -46,7 +46,7 @@ return (
     <div  id="tienda" class="caja2" >
       <ul>
         <li><Link className="nav-link" to="/LoginForm" > {localStorage.getItem('user') || 'Inicia sesión '}  <FaUserAlt className='icon'/>  </Link></li>
-        <li><Link className="nav-link" to="/LoginForm" >  <FaShoppingCart />  </Link></li>
+        <li><Link className="nav-link" to="/Carrito" >  <FaShoppingCart />  </Link></li>
         <li hidden={localStorage.getItem('token')? false : true} onClick={handlerLogout}> <Link className="nav-link" > <FaPowerOff className='icon'/> </Link> </li>
       </ul>
    
