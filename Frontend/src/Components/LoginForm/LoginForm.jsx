@@ -2,7 +2,7 @@ import React from 'react'
 import './LoginForm.css'
 import { FaUserAlt } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState } from "react";
 import login from '../../API/login';
 import { useNavigate } from 'react-router-dom';
@@ -16,8 +16,8 @@ const LoginForm = () => {
     const handlerLogin = () => {
         try {
             login(mail, password).then((respuesta) => {
-                if(respuesta.data.token != null){
-                    console.log({"Respuesta del backend":respuesta.data})
+                if (respuesta.data.token != null) {
+                    console.log({ "Respuesta del backend": respuesta.data })
                     localStorage.setItem('token', respuesta.data.token);
                     localStorage.setItem('user', respuesta.data.user);
                     localStorage.setItem('credit-card', respuesta.data.creditCard);
@@ -27,7 +27,7 @@ const LoginForm = () => {
                         navigate(redireccion)
                     }, 200)
 
-                }else{
+                } else {
                     console.log(respuesta.data)
                 }
 
@@ -35,7 +35,7 @@ const LoginForm = () => {
         } catch (error) {
             console.log(error)
         }
-        
+
     }
 
     const handlerMail = (event) => {
@@ -46,35 +46,36 @@ const LoginForm = () => {
         setPassword(event.target.value);
     }
 
-  return (<>
-    <div className='wrapper'>
-        <div className="bordered-div">
-            <h1>Login</h1>
-            <div className='input-box'>
-                <input onChange={handlerMail} type='text' placeholder='Username' required/>
-                <FaUserAlt className='icon'/>
 
-            </div>
-            <div className='input-box'>
-                <input onChange={handlerPassword} type='password' placeholder='Password' required />
-                <FaLock className='icon'/>
-            </div>
+        return (<>
+            <div className='wrapper'>
+                <div className="bordered-div">
+                    <h1>Login</h1>
+                    <div className='input-box'>
+                        <input onChange={handlerMail} type='text' placeholder='Username' required />
+                        <FaUserAlt className='icon' />
 
-            <div className='remember-forgot'>
-                <label><input type='checkbox' />Recordar </label>
-                <a href='#'>No recuerdas la contrasena?</a>
-                
-            </div>
+                    </div>
+                    <div className='input-box'>
+                        <input onChange={handlerPassword} type='password' placeholder='Password' required />
+                        <FaLock className='icon' />
+                    </div>
 
-            <button type='submit' onClick={handlerLogin}>Login</button>
-            
-            <div className='register-link'>
-                <p>   <Link className="nav-link" to="/registrate" >Registrate</Link></p>
+                    <div className='remember-forgot'>
+                        <label><input type='checkbox' />Recordar </label>
+                        <a href='#'>No recuerdas la contrasena?</a>
+
+                    </div>
+
+                    <button type='submit' onClick={handlerLogin}>Login</button>
+
+                    <div className='register-link'>
+                        <p>   <Link className="nav-link" to="/registrate" >Registrate</Link></p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    </>
-  )
+        </>
+        )
 }
 
 export default LoginForm

@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Carrito.css';
 import Button from 'react-bootstrap/Button';
 
 const Carrito = () => {
-  // Obtenemos el carrito actual del localStorage
-  const cart = JSON.parse(localStorage.getItem('cart'));
+  const [cart, setCart] = useState([])
 
   const removeFromCart = (index) => {
     // Obtenemos el carrito actual del localStorage
@@ -12,15 +11,17 @@ const Carrito = () => {
     // Eliminamos el elemento en la posición index
     updatedCart.splice(index, 1);
     // Actualizamos el carrito en el localStorage
+    setCart(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
-    // Recargamos la página para reflejar los cambios
-    window.location.reload();
   };
 
+  useEffect(() => {
+    setCart(JSON.parse(localStorage.getItem('cart')))
+  },[])
   return (
     <div className="carrito-container">
-      <h2>Carrito</h2>
-      {cart ? (
+      <h2 style={{color: "white"}}>Carrito</h2>
+      {cart[0] != null ? (
         cart.map((item, index) => (
           <div className="carrito-item" key={index}>
             {item.gameTitle && (
@@ -54,7 +55,7 @@ const Carrito = () => {
           </div>
         ))
       ) : (
-        <p>No hay elementos en el carrito.</p>
+        <h1 style={{color: "white"}}>No hay elementos en el carrito.</h1>
       )}
     </div>
   );
