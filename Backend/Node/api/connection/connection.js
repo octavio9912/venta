@@ -2,11 +2,11 @@ const mysql = require('mysql');
 
 function establishConnection() {
     return mysql.createConnection({
-        host: '0.tcp.ngrok.io',
+        host: 'localhost',
         user: 'root',
-        password: 'Mayusculas12.',
+        password: '',
         database: 'gamestore',
-        port: '11150'
+        port: '3306'
     });
 }
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = "https://efc3-2806-2f0-64a1-f0c5-bb78-e02b-49a9-8aaf.ngrok-free.app";
+const BASE_URL = "http://localhost:3000";
 
 const NewInstance = axios.create({
 	// Configuration
