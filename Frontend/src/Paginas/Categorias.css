@@ -50,7 +50,10 @@ body {
   justify-content: center;
   text-align: center;
   transition: transform 0.3s ease-in-out; /* Transición para el efecto de zoom */
+  
 }
+
+
 
 .Cards img {
   max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
