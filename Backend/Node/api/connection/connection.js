@@ -1,19 +1,40 @@
 const mysql = require('mysql');
-const mysqlConnection = mysql.createConnection(
-{
-host:'localhost',
-user: 'root',
-password: 'Mayusculas12.',
-database: 'gamestore',
-port: '3306'
-});
 
-mysqlConnection.connect(error => {
-    if(!error){
-        return console.log("Connection successfull to database");
-    }else{
-        return console.log("Error while connecting to db: ",error);
-    }
-});
+function establishConnection() {
+    return mysql.createConnection({
+        host: '0.tcp.ngrok.io',
+        user: 'root',
+        password: 'Mayusculas12.',
+        database: 'gamestore',
+        port: '11150'
+    });
+}
+
+let mysqlConnection = establishConnection();
+
+function handleDisconnect() {
+    mysqlConnection = establishConnection();
+
+    mysqlConnection.connect(error => {
+        if (error) {
+            console.error('Error while connecting to database:', error);
+            setTimeout(handleDisconnect, 2000); // Retry connection after 2 seconds
+        } else {
+            console.log('Connection successful to database');
+        }
+    });
+
+    mysqlConnection.on('error', error => {
+        console.error('Database error:', error);
+        if (error.code === 'PROTOCOL_CONNECTION_LOST') {
+            console.log('Reconnecting to database...');
+            handleDisconnect(); // Reconnect
+        } else {
+            throw error;
+        }
+    });
+}
+
+handleDisconnect();
 
 module.exports = mysqlConnection;

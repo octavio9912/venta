@@ -46,6 +46,10 @@ const LoginForm = () => {
         setPassword(event.target.value);
     }
 
+    window.scrollTo({
+        top: document.body.scrollHeight /10,
+        behavior: 'instant' // Smooth scrolling behavior
+      });
 
         return (<>
             <div className='wrapper'>

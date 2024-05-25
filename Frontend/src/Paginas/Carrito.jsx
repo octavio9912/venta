@@ -16,7 +16,12 @@ const Carrito = () => {
   };
 
   useEffect(() => {
-    setCart(JSON.parse(localStorage.getItem('cart')))
+    if(localStorage.getItem('cart') != null){
+      setCart(JSON.parse(localStorage.getItem('cart')))
+    }else{
+
+    setCart([])
+    }
   },[])
   return (
     <div className="carrito-container">
