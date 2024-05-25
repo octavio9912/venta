@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "4faaa61b-9f18-4d3e-a991-47e7311a7f3d",
+		"name": "gameStore",
+		"description": "La API de GameStore proporciona varias operaciones para gestionar y acceder a datos relacionados con juegos, consolas y accesorios. Esta API está diseñada para permitir a los usuarios autenticarse y realizar solicitudes para obtener listas de juegos, consolas y accesorios disponibles en la tienda.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23554282"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "get-games",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/categories/get-games/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"get-games",
+								""
+							]
+						},
+						"description": "Devuelve una lista de todos los juegos disponibles en la tienda.\n\n\\-Requiere un token JWT válido en el header de autorización.  \n\\-La respuesta incluye una lista de objetos de juegos.\n\n**Ejemplo de Respuesta:**\n\n``` json\n[\n    {\n        \"id\": 1,\n        \"name\": \"Título del Juego 1\",\n        \"price\": 59.99,\n        \"offer\": 0\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Título del Juego 2\",\n        \"price\": 39.99,\n        \"offer\": 1\n    }\n]\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "get-consoles",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/categories/get-consoles/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"get-consoles",
+								""
+							]
+						},
+						"description": "Devuelve una lista de todas las consolas disponibles en la tienda.\n\n\\-Requiere un token JWT válido en el header de autorización.  \n\\-La respuesta incluye una lista de objetos de consolas.\n\n**Ejemplo de Respuesta:**\n\n``` json\n[\n    {\n        \"id\": 1,\n        \"name\": \"Modelo de Consola 1\",\n        \"price\": 499.99,\n        \"offer\": 0\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Modelo de Consola 2\",\n        \"price\": 299.99,\n        \"offer\": 1\n    }\n]\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "get-accessories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/categories/get-accessories/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"get-accessories",
+								""
+							]
+						},
+						"description": "Devuelve una lista de todos los accesorios disponibles en la tienda.\n\n\\-Requiere un token JWT válido en el header de autorización.  \n\\-La respuesta incluye una lista de objetos de accesorios.\n\n**Ejemplo de Respuesta:**\n\n``` json\n[\n    {\n        \"id\": 1,\n        \"name\": \"Accesorio 1\",\n        \"price\": 29.99,\n        \"offer\": 0\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Accesorio 2\",\n        \"price\": 19.99,\n        \"offer\": 1\n    }\n]\n\n ```"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Offers",
+			"item": [
+				{
+					"name": "get-game-offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/offers/get-game-offers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"offers",
+								"get-game-offers"
+							]
+						},
+						"description": "Este endpoint recupera una lista de juegos que están actualmente en oferta. Consulta la tabla `games` en la base de datos para encontrar todos los registros donde la columna `offer` está establecida en `1`, lo que indica que el juego está en oferta. El resultado se devuelve como un array JSON de objetos de juegos.\n\n**Ejemplo de Respuesta Exitosa:**\n\n``` json\n[ { \"id\": 1, \"name\": \"Título del Juego 1\", \"price\": 29.99, \"offer\": 1 }, { \"id\": 2, \"name\": \"Título del Juego 2\", \"price\": 19.99, \"offer\": 1 } ]\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "get-console-offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/offers/get-console-offers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"offers",
+								"get-console-offers"
+							]
+						},
+						"description": "Este endpoint recupera una lista de consolas que están actualmente en oferta. Consulta la tabla `consoles` en la base de datos para encontrar todos los registros donde la columna `offer` está establecida en `1`, lo que indica que la consola está en oferta. El resultado se devuelve como un array JSON de objetos de consolas.\n\n**Ejemplo de Respuesta Exitosa:**\n\n``` json\n[ { \"id\": 1, \"name\": \"Modelo de Consola 1\", \"price\": 299.99, \"offer\": 1 }, { \"id\": 2, \"name\": \"Modelo de Consola 2\", \"price\": 199.99, \"offer\": 1 } ]\n\n\n\n\n ```"
+					},
+					"response": []
+				},
+				{
+					"name": "get-accessory-offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/offers/get-accessory-offers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"offers",
+								"get-accessory-offers"
+							]
+						},
+						"description": "Este endpoint recupera una lista de accesorios que están actualmente en oferta. Consulta la tabla `accessories` en la base de datos para encontrar todos los registros donde la columna `offer` está establecida en `1`, lo que indica que el accesorio está en oferta. El resultado se devuelve como un array JSON de objetos de accesorios.\n\n**Ejemplo de Respuesta Exitosa:**\n\n``` json\n[\n    {\n        \"id\": 1,\n        \"name\": \"Accesorio 1\",\n        \"price\": 49.99,\n        \"offer\": 1\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Accesorio 2\",\n        \"price\": 24.99,\n        \"offer\": 1\n    }\n]\n\n ```"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mail\": \"john.doe@example.com \",\n    \"password\": \"T9v!k2x@#q\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Permite a los usuarios autenticarse y obtener un token JWT que puede ser utilizado para acceder a los otros endpoints protegidos de la\n\n\\-La solicitud requiere los parámetros \\`mail\\` y \\`password\\` en el cuerpo de la solicitud.\n\n\\- La respuesta incluye un token JWT que debe ser usado en los headers de autorización para las solicitudes posteriores.”"
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mail\": \"mark.jones@example.com\",\n    \"completeName\": \"Mark Jones\",\n    \"password\": \"A8!b@3sLq1\",\n    \"creditCard\": \"6011000990139424\",\n    \"expirationDate\": \"2026-09-30\",\n    \"ccv\": \"432\"\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signin"
+					]
+				},
+				"description": "Permite a los usuarios autenticarse y obtener un token JWT que puede ser utilizado para acceder a los otros endpoints protegidos de la\n\n\\-La solicitud requiere los parámetros \\`mail\\` y \\`password\\` en el cuerpo de la solicitud.\n\n\\- La respuesta incluye un token JWT que debe ser usado en los headers de autorización para las solicitudes posteriores.”\n\n**Ejemplo de Respuesta Exitosa:**\n\n``` json\njsonCopy code{\n    \"operation\": \"inserted fields\"\n}\n\n ```"
+			},
+			"response": []
+		}
+	]
+}

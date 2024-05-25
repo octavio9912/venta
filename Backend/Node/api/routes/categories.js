@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const verifyToken = require('../functions/verifyToken');
 const mysqlConnection = require('../connection/connection');
-const { rawListeners } = require('../connection/connection');
 
 router.get('/get-games',(req,res)=>{
         mysqlConnection.query('select * from games',(error, rows, fields)=>{

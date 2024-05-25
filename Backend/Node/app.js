@@ -20,6 +20,8 @@ app.use('/categories', categories);
 const signin = require('./api/routes/register');
 app.use('/signin', signin);
 
+const offers = require('./api/routes/offers');
+app.use('/offers', offers);
 
 
 module.exports = app;
