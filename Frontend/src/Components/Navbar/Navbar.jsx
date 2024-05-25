@@ -19,7 +19,7 @@ return (
     
     <div class="caja1" >
       <Link to="Inicio" className="title">
-      GDL Shop
+      JGL Shop
       </Link>
     </div>
 

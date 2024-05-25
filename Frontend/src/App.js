@@ -30,6 +30,8 @@ function App() {
           <Route path="/Categorias" element={<Categorias />} />
           <Route path="/Cargando" element={<Cargando /> } />
           <Route path="/Carrito" element={<Carrito /> } />
+          <Route path="*" element={<Inicio /> } />
+
         </Routes>
       </Router>
     
