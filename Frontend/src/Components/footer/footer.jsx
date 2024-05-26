@@ -1,5 +1,6 @@
 import React from 'react';
-import './footer.css';
+import './Footer.css';
+import {Link} from 'react-router-dom'
 import { FaInstagramSquare, FaTwitterSquare, FaFacebookSquare, FaLinkedin, FaGithubSquare } from 'react-icons/fa';
 
 const Footer = () => {
@@ -13,29 +14,29 @@ const Footer = () => {
         <div className="explore">
           <h4>Explore</h4>
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><Link className="nav-link" to="/Inicio" >Home</Link></li>
+            <li><Link className="nav-link" to="/Contactos" >About</Link></li>
+            <li><Link className="nav-link" to="/Contactos" >Contact</Link></li>
           </ul>
         </div>
 
         <div className="services">
           <h4>Services</h4>
           <ul>
-            <li>Web Design</li>
-            <li>UI/UX Design</li>
-            <li>Web Development</li>
-            <li>Social Management</li>
+            <li><Link className="nav-link" to="/Contactos" >Web Design</Link></li>
+            <li><Link className="nav-link" to="/Contactos" >UI/UX Design</Link></li>
+            <li><Link className="nav-link" to="/Contactos" >Web Development</Link></li>
+            <li><Link className="nav-link" to="/Contactos" >Social Management</Link></li>
           </ul>
         </div>
 
         <div className="projects">
           <h4>Projects</h4>
           <ul>
-            <li>Recent Products</li>
-            <li>Explore Our Work</li>
-            <li>Customer Testimonials</li>
-            <li>Featured</li>
+            <li><Link className="nav-link" to="/Contactos" >Recent Products</Link></li>
+            <li><Link className="nav-link" to="/Contactos" >Explore Our Work</Link></li>
+            <li><Link className="nav-link" to="/Contactos" >Customer Testimonials</Link></li>
+            <li><Link className="nav-link" to="/Contactos" >Featured</Link></li>
           </ul>
         </div>
       </div>
@@ -43,27 +44,27 @@ const Footer = () => {
       <div className="socials">
         <ul>
           <li>
-            <a href="#" className="social-link">
+            <a  className="social-link">
               <FaFacebookSquare />
             </a>
           </li>
           <li>
-            <a href="#" className="social-link">
+            <a  className="social-link">
               <FaLinkedin />
             </a>
           </li>
           <li>
-            <a href="#" className="social-link">
+            <a  className="social-link">
               <FaInstagramSquare />
             </a>
           </li>
           <li>
-            <a href="#" className="social-link">
+            <a  className="social-link">
               <FaTwitterSquare />
             </a>
           </li>
           <li>
-            <a href="#" className="social-link">
+            <a  className="social-link">
               <FaGithubSquare />
             </a>
           </li>

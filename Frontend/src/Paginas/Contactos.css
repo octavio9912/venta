@@ -13,39 +13,20 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .text {
-    flex: 1;
-    text-align: left;
-    margin-right: 10%; 
-  }
-  
-  
-  .image {
-    flex: 1;
-    text-align: right;
-    display: flex;
-    align-items: center;
-  }
-  
-  .image img {
-    max-width: 100%;
-    height: auto;
-   
-  }
   /* Estilos para el contenedor principal */
-/* Estilos para el contenedor principal */
 .container {
-  max-width: 800px; /* Ancho máximo del contenedor */
+  max-width: 1000px; /* Ancho máximo del contenedor */
   margin: 0 auto; /* Centrar horizontalmente */
   padding: 20px; /* Añadir un poco de espacio alrededor del contenido */
   background-color: #fff; /* Fondo blanco */
 }
 
-/* Estilos para el contenedor principal */
+/* Estilos para el contenedor del contenido */
 .content {
   display: flex;
   flex-direction: column;
   align-items: center; /* Centrar los elementos horizontalmente */
+  padding: 20px;
 }
 
 /* Estilos para el texto */
@@ -55,46 +36,76 @@
   margin-bottom: 20px;
 }
 
+.text h2 {
+  margin-bottom: 10px;
+}
+
+.text p {
+  line-height: 1.6;
+}
+
 /* Estilos para el mapa */
 .image {
+  width: 100%;
   margin-bottom: 20px;
+}
+
+.image p {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.image iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 5px;
 }
 
 /* Estilos para el formulario */
 .formulario-container {
-  max-width: 100%; /* Ancho máximo del formulario */
+  width: 100%;
+  max-width: 600px;
 }
 
 .formulario-container form {
-  width: 100%; /* Ancho completo del formulario */
+  display: flex;
+  flex-direction: column;
 }
 
 .formulario-container label {
   margin-bottom: 10px;
-  display: block; /* Mostrar los labels en bloques */
+  font-weight: bold;
 }
 
 .formulario-container input[type="text"],
 .formulario-container input[type="email"],
 .formulario-container textarea {
-  width: 100%; /* Ancho completo de los campos de entrada */
+  width: 100%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; /* Incluir padding y border en el ancho */
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.formulario-container textarea {
+  resize: vertical;
+  height: 100px;
 }
 
 .formulario-container button[type="submit"] {
-  width: 100%; /* Ancho completo del botón de enviar */
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 16px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  align-self: center;
+  max-width: 200px;
 }
 
 .formulario-container button[type="submit"]:hover {

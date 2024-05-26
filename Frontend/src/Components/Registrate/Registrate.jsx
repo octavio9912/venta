@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import signin from '../../API/signin';
+import './Registrate.css'; // Asegúrate de tener los estilos necesarios
 
 const Register = () => {
     const navigate = useNavigate();
@@ -10,6 +11,7 @@ const Register = () => {
     const [creditCard, setCreditCard] = useState('');
     const [expirationDate, setExpirationDate] = useState('');
     const [ccv, setCcv] = useState('');
+    const [showModal, setShowModal] = useState(false); // Estado para controlar la visibilidad del modal
     const redireccion = '/inicio';
 
     const handlerSignin = async () => {
@@ -18,9 +20,7 @@ const Register = () => {
             if (respuesta.data && respuesta.data.token) {
                 console.log({ "Respuesta del backend": respuesta.data });
                 localStorage.setItem('token', respuesta.data.token);
-                setTimeout(() => {
-                    navigate(redireccion);
-                }, 200);
+                setShowModal(true); // Mostrar modal
             } else {
                 console.log(respuesta.data);
             }
@@ -29,34 +29,23 @@ const Register = () => {
         }
     };
 
-    const handlerMail = (event) => {
-        setMail(event.target.value);
+    const closeModal = () => {
+        setShowModal(false);
+        setMail('');
+        setCompleteName('');
+        setPassword('');
+        setCreditCard('');
+        setExpirationDate('');
+        setCcv('');
+        navigate(redireccion);
     };
 
-    const handlerCompleteName = (event) => {
-        setCompleteName(event.target.value);
-    };
-
-    const handlerPassword = (event) => {
-        setPassword(event.target.value);
-    };
-
-    const handlerCreditCard = (event) => {
-        setCreditCard(event.target.value);
-    };
-
-    const handlerExpirationDate = (event) => {
-        setExpirationDate(event.target.value);
-    };
-
-    const handlerCcv = (event) => {
-        setCcv(event.target.value);
-    };
-
-    window.scrollTo({
-        top: document.body.scrollHeight / 10,
-        behavior: 'instant' // Smooth scrolling behavior
-    });
+    const handlerMail = (event) => setMail(event.target.value);
+    const handlerCompleteName = (event) => setCompleteName(event.target.value);
+    const handlerPassword = (event) => setPassword(event.target.value);
+    const handlerCreditCard = (event) => setCreditCard(event.target.value);
+    const handlerExpirationDate = (event) => setExpirationDate(event.target.value);
+    const handlerCcv = (event) => setCcv(event.target.value);
 
     return (
         <div className='wrapper'>
@@ -65,36 +54,46 @@ const Register = () => {
 
                 <div className='input-box'>
                     <label>Correo Electrónico:</label>
-                    <input onChange={handlerMail} type='email' placeholder='Correo' required />
+                    <input value={mail} onChange={handlerMail} type='email' placeholder='Correo' required />
                 </div>
 
                 <div className='input-box'>
                     <label>Nombre Completo:</label>
-                    <input onChange={handlerCompleteName} type='text' placeholder='Nombre Completo' required />
+                    <input value={completeName} onChange={handlerCompleteName} type='text' placeholder='Nombre Completo' required />
                 </div>
 
                 <div className='input-box'>
                     <label>Contraseña:</label>
-                    <input onChange={handlerPassword} type='password' placeholder='Contraseña' required />
+                    <input value={password} onChange={handlerPassword} type='password' placeholder='Contraseña' required />
                 </div>
-                
+
                 <div className='input-box'>
                     <label>Número de Tarjeta:</label>
-                    <input onChange={handlerCreditCard} type='number' placeholder='Número de Tarjeta' required />
+                    <input value={creditCard} onChange={handlerCreditCard} type='number' placeholder='Número de Tarjeta' required />
                 </div>
 
                 <div className='input-box'>
                     <label>Fecha de Vencimiento:</label>
-                    <input onChange={handlerExpirationDate} type='date' placeholder='Fecha de Vencimiento' required />
+                    <input value={expirationDate} onChange={handlerExpirationDate} type='date' placeholder='Fecha de Vencimiento' required />
                 </div>
 
                 <div className='input-box'>
                     <label>CCV:</label>
-                    <input onChange={handlerCcv} type='number' placeholder='CCV' required />
+                    <input value={ccv} onChange={handlerCcv} type='number' placeholder='CCV' required />
                 </div>
 
-                <button type='button' onClick={handlerSignin}>Login</button>
+                <button type='button' onClick={handlerSignin}>Registrarse</button>
             </div>
+
+            {showModal && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <h2>Registro Exitoso</h2>
+                        <p>Te has registrado correctamente.</p>
+                        <button onClick={closeModal}>Aceptar</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

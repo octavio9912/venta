@@ -1,47 +1,64 @@
-/* Estilos para el formulario de sugerencias */
+/* Estilos para el contenedor del formulario */
 .formulario-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .formulario-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .formulario-container form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .formulario-container label {
-    margin-bottom: 10px;
-  }
-  
-  .formulario-container input[type="text"],
-  .formulario-container input[type="email"],
-  .formulario-container textarea {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .formulario-container button[type="submit"] {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .formulario-container button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Estilos para el encabezado del formulario */
+.formulario-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+.formulario-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para las etiquetas */
+.formulario-container label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Estilos para los campos de entrada de texto, correo y textarea */
+.formulario-container input[type="text"],
+.formulario-container input[type="email"],
+.formulario-container textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho */
+}
+
+/* Estilos específicos para el textarea */
+.formulario-container textarea {
+  resize: vertical; /* Permitir al usuario ajustar la altura del textarea */
+  height: 100px; /* Altura inicial del textarea */
+}
+
+/* Estilos para el botón de enviar */
+.formulario-container button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center; /* Centrar el botón en el formulario */
+  max-width: 200px; /* Limitar el ancho máximo del botón */
+}
+
+/* Cambiar el color del botón al pasar el cursor */
+.formulario-container button[type="submit"]:hover {
+  background-color: #0056b3;
+}
