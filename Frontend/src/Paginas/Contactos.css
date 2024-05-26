@@ -3,7 +3,14 @@
     align-items: center;
     background-color: #ffffff; /* Fondo blanco */
     padding: 10%; /* Márgenes a los costados */
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px; /* Márgenes a los costados */
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .text {
@@ -25,4 +32,71 @@
     height: auto;
    
   }
-  
+  /* Estilos para el contenedor principal */
+/* Estilos para el contenedor principal */
+.container {
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centrar horizontalmente */
+  padding: 20px; /* Añadir un poco de espacio alrededor del contenido */
+  background-color: #fff; /* Fondo blanco */
+}
+
+/* Estilos para el contenedor principal */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar los elementos horizontalmente */
+}
+
+/* Estilos para el texto */
+.text {
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el mapa */
+.image {
+  margin-bottom: 20px;
+}
+
+/* Estilos para el formulario */
+.formulario-container {
+  max-width: 100%; /* Ancho máximo del formulario */
+}
+
+.formulario-container form {
+  width: 100%; /* Ancho completo del formulario */
+}
+
+.formulario-container label {
+  margin-bottom: 10px;
+  display: block; /* Mostrar los labels en bloques */
+}
+
+.formulario-container input[type="text"],
+.formulario-container input[type="email"],
+.formulario-container textarea {
+  width: 100%; /* Ancho completo de los campos de entrada */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Incluir padding y border en el ancho */
+  margin-bottom: 10px;
+}
+
+.formulario-container button[type="submit"] {
+  width: 100%; /* Ancho completo del botón de enviar */
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.formulario-container button[type="submit"]:hover {
+  background-color: #0056b3;
+}

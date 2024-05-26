@@ -11,6 +11,7 @@ import Ofertas from './Paginas/Ofertas';
 import Categorias from './Paginas/Categorias';
 import Cargando from './Components/Cargando/Cargando';
 import Carrito from './Paginas/Carrito';
+import Formulario from './Components/Formulario/Formulario';
 
 function App() {
   return (
@@ -30,8 +31,8 @@ function App() {
           <Route path="/Categorias" element={<Categorias />} />
           <Route path="/Cargando" element={<Cargando /> } />
           <Route path="/Carrito" element={<Carrito /> } />
+          <Route path="/Formulario" element={<Formulario/>} />
           <Route path="*" element={<Inicio /> } />
-
         </Routes>
       </Router>
     

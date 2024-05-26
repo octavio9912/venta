@@ -1,5 +1,5 @@
 import NewInstance from './NotLoggedBaseAPI';
-const endpoint= 'register';
+const endpoint= 'signin';
 
 
 const signin = async (mail,completeName, password, creditCard, expirationDate, ccv) => {

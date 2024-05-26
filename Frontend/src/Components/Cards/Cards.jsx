@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import Button from 'react-bootstrap/Button'; 
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, gameDesigner, gameReleaseDate }) => {
-  
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+
   const addToCart = () => {
     // Creamos el objeto que representará el juego a agregar al carrito
     const gameToAdd = {
@@ -30,6 +35,9 @@ const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, g
     cart.push(gameToAdd);
     // Guardamos el carrito actualizado en el localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Mostramos el modal
+    handleShow();
   };
 
   return (
@@ -51,9 +59,24 @@ const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, g
           <div style={{ marginBottom: '10px' }}> {/* Agregar un margen inferior */}
             <Button variant="primary">Comprar</Button>
           </div>
-          <Button variant="primary" onClick={addToCart}>Agregar al carrito</Button> 
+          <Button variant="primary" onClick={addToCart}>Agregar al carrito</Button>
         </Card.Body>
       </Card>
+
+      <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Carrito de Compras</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>El juego ha sido agregado al carrito exitosamente.</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Continuar comprando
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
