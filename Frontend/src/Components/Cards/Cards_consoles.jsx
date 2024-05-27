@@ -10,7 +10,10 @@ const BasicExample2 = ({ consoleID, consoleTitle, consoleImage, consoleManufactu
   const [showNotLoggedModal, setShowNotLoggedModal] = useState(false);
   const navigate = useNavigate();
   const handleClose = () => setShowModal(false);
-  const handleCloseCart = () => setShowModal(false);
+  const handleCloseCart = () => {
+    setShowModal(false);
+    navigate('/Carrito');  
+}
   const handleCloseNotLogged = () => setShowNotLoggedModal(false);
   const handleNotLogged = () => {
     setShowNotLoggedModal(false); 

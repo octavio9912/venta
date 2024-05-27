@@ -10,17 +10,20 @@ const BasicExample3 = ({ accessoryID, accessoryTitle, accessoryImage, accessoryM
   const [showNotLoggedModal, setShowNotLoggedModal] = useState(false);
   const navigate = useNavigate();
   const handleClose = () => setShowModal(false);
-  const handleCloseCart = () => setShowModal(false);
+  const handleCloseCart = () => {
+    setShowModal(false);
+    navigate('/Carrito');
+  }
   const handleCloseNotLogged = () => setShowNotLoggedModal(false);
   const handleNotLogged = () => {
-    setShowNotLoggedModal(false); 
+    setShowNotLoggedModal(false);
     navigate('/LoginForm')
-    
+
   }
   const handleShow = () => {
-    if(localStorage.getItem('token') !== null){
+    if (localStorage.getItem('token') !== null) {
       setShowModal(true);
-    }else{
+    } else {
       setShowNotLoggedModal(true)
     }
   }
@@ -82,7 +85,7 @@ const BasicExample3 = ({ accessoryID, accessoryTitle, accessoryImage, accessoryM
         </Modal.Header>
         <Modal.Body>El accesorio ha sido agregado al carrito exitosamente.</Modal.Body>
         <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose}>
             Continuar comprando
           </Button>
           <Button variant="primary" onClick={handleCloseCart}>
@@ -101,7 +104,7 @@ const BasicExample3 = ({ accessoryID, accessoryTitle, accessoryImage, accessoryM
             Cerrar
           </Button>
           <Button variant="primary" onClick={handleNotLogged}>
-          Iniciar sesion
+            Iniciar sesion
           </Button>
         </Modal.Footer>
       </Modal>

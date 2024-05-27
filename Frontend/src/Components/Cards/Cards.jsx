@@ -12,17 +12,20 @@ const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, g
   const [showNotLoggedModal, setShowNotLoggedModal] = useState(false);
   const navigate = useNavigate();
   const handleClose = () => setShowModal(false);
-  const handleCloseCart = () => setShowModal(false);
+  const handleCloseCart = () => {
+    setShowModal(false);
+    navigate('/Carrito');
+  }
   const handleCloseNotLogged = () => setShowNotLoggedModal(false);
   const handleNotLogged = () => {
-    setShowNotLoggedModal(false); 
+    setShowNotLoggedModal(false);
     navigate('/LoginForm')
-    
+
   }
   const handleShow = () => {
-    if(localStorage.getItem('token') !== null){
+    if (localStorage.getItem('token') !== null) {
       setShowModal(true);
-    }else{
+    } else {
       setShowNotLoggedModal(true)
     }
   }
@@ -104,7 +107,7 @@ const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, g
             Cerrar
           </Button>
           <Button variant="primary" onClick={handleNotLogged}>
-          Iniciar sesion
+            Iniciar sesion
           </Button>
         </Modal.Footer>
       </Modal>
