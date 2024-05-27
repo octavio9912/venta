@@ -15,9 +15,9 @@ body {
   min-height: 100vh;
   background: url(./Components/Assets/fondo.jpg)
   no-repeat;
-  background-size: cover;
+  background-size: 100 vw, 100 vh;
   background-position: center;
-}
+background-attachment:fixed;}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
