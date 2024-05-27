@@ -1,35 +1,36 @@
 const express = require('express');
 const router = express.Router();
-const mysqlConnection = require('../connection/connection');
+const executeQuery = require('../functions/executeQuery');
 
-router.get('/get-game-offers', (req, res) =>{
-    mysqlConnection.query('select * from games where offer = 1;',(error, rows, fields)=>{
-        if(!error){
-            res.json(rows);
-        }else{
-            console.log(error)
-        }
-    })
+
+router.get('/get-game-offers', async (req, res) => {
+    try {
+        const rows = await executeQuery('SELECT * FROM games WHERE offer = 1;');
+        res.json(rows);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Error fetching game offers');
+    }
 });
 
-router.get('/get-console-offers', (req, res) =>{
-    mysqlConnection.query('select * from consoles where offer = 1;',(error, rows, fields) => {
-        if(!error){
-            res.json(rows);
-        }else{
-            console.log(error);
-        }
-    })
-})
+router.get('/get-console-offers', async (req, res) => {
+    try {
+        const rows = await executeQuery('SELECT * FROM consoles WHERE offer = 1;');
+        res.json(rows);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Error fetching console offers');
+    }
+});
 
-router.get('/get-accessory-offers',(req, res)=>{
-    mysqlConnection.query('select * from accessories where offer = 1;',(error,rows, fields) => {
-        if(!error){
-            res.json(rows);
-        }else{
-            console.log(error)
-        }
-    })
-})
+router.get('/get-accessory-offers', async (req, res) => {
+    try {
+        const rows = await executeQuery('SELECT * FROM accessories WHERE offer = 1;');
+        res.json(rows);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Error fetching accessory offers');
+    }
+});
 
 module.exports = router;

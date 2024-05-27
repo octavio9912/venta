@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const mysqlConnection = require('../connection/connection');
 const nodemailer = require('nodemailer');
 const generateHTML = require('../functions/generateMail');
+const executeQuery = require('../functions/executeQuery');
 
 let mailOptions = {};
 
@@ -18,7 +18,6 @@ const transporter = nodemailer.createTransport({
 
 console.log(process.env.MAIL, process.env.PASSWORD);
 
-
 const setMailOptions = (name, mail, suggestion) => {
     const htmlContent = generateHTML(name, mail, suggestion);
     mailOptions = {
@@ -28,7 +27,6 @@ const setMailOptions = (name, mail, suggestion) => {
         html: htmlContent
     };
 };
-
 
 const sendMail = () => {
     transporter.sendMail(mailOptions, function (error, info) {
@@ -40,23 +38,22 @@ const sendMail = () => {
     });
 }
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     console.log(req.body);
     const { name, mail, suggestion } = req.body;
     console.log(name, mail, suggestion);
     setMailOptions(name, mail, suggestion);
     sendMail();
+
     try {
-        mysqlConnection.query('INSERT INTO suggestions (suggestionName, suggestionMail, suggestionContent) VALUES (?,?,?);', [name, mail, suggestion], (error, rows, fields) => {
-            if (!error) {
-                let data = "form was send correctly";
-                res.json({ 'operation': data });
-            } else {
-                console.log(error);
-            }
-        })
+        const query = 'INSERT INTO suggestions (suggestionName, suggestionMail, suggestionContent) VALUES (?,?,?);';
+        await executeQuery(query, [name, mail, suggestion]);
+        let data = "Form was sent correctly";
+        res.json({ 'operation': data });
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        res.status(500).send('Error submitting the form');
     }
 });
+
 module.exports = router;
