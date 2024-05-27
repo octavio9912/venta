@@ -32,13 +32,13 @@ return (
     <div  class="caja" >
       <ul className={menuOpen ? "open" : ""}>
         <li>
-          <Link className="nav-link" to="/Categorias" >Categorias</Link>
+          <Link className="nav-link" to="/Categorias" >Categorías</Link>
         </li>
         <li>
           <Link className="nav-link" to="/Ofertas" >Ofertas</Link>
         </li>
         <li>
-          <Link className="nav-link" to="/Contactos" >Contactos</Link>
+          <Link className="nav-link" to="/Contactos" >Contacto</Link>
         </li>
       </ul>
     </div>

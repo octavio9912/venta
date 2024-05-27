@@ -2,9 +2,9 @@ const mysql = require('mysql');
 
 function establishConnection() {
     return mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
+        host: process.env.DBHOST,
+        user: process.env.DBUSER,
+        password: process.env.DBPASS,
         database: 'gamestore',
         port: '3306'
     });

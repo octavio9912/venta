@@ -1,7 +1,9 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
+
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -23,5 +25,7 @@ app.use('/signin', signin);
 const offers = require('./api/routes/offers');
 app.use('/offers', offers);
 
+const contact = require('./api/routes/contact')
+app.use('/contact', contact);
 
 module.exports = app;

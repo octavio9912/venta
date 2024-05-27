@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Formulario.css'; // Importar estilos CSS
+import sendForm from '../../API/sendForm'
 
 const Formulario = () => {
   const [nombre, setNombre] = useState('');
@@ -24,6 +25,8 @@ const Formulario = () => {
     console.log('Nombre:', nombre);
     console.log('Correo:', correo);
     console.log('Sugerencia:', sugerencia);
+    //Enviar datos al endpoint
+    sendForm(nombre, correo, sugerencia); 
     // Limpiar los campos después de enviar la sugerencia
     setNombre('');
     setCorreo('');
