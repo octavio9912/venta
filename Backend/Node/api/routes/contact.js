@@ -46,5 +46,17 @@ router.post('/', (req, res) => {
     console.log(name, mail, suggestion);
     setMailOptions(name, mail, suggestion);
     sendMail();
+    try {
+        mysqlConnection.query('INSERT INTO suggestions (suggestionName, suggestionMail, suggestionContent) VALUES (?,?,?);', [name, mail, suggestion], (error, rows, fields) => {
+            if (!error) {
+                let data = "form was send correctly";
+                res.json({ 'operation': data });
+            } else {
+                console.log(error);
+            }
+        })
+    } catch (error) {
+        console.log(error)
+    }
 });
 module.exports = router;
