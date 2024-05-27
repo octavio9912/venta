@@ -125,7 +125,7 @@ CREATE TABLE `suggestions` (
 
 --
 -- Dumping data for table `suggestions`
---
+-- 
 
 LOCK TABLES `suggestions` WRITE;
 /*!40000 ALTER TABLE `suggestions` DISABLE KEYS */;
