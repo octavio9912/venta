@@ -12,7 +12,7 @@ const Contactos = () => {
     </div>
     <div class="image">
     <p>Visitanos </p>
-       <iframe title="google-embeded" id="map-canvas" class="map_part" src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=slp alameda&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">Powered by <a href="https://embedgooglemaps.com">embed google maps</a> and <a href="http://eucasinos.se/">eu casino</a></iframe>
+    <iframe title="google-embeded" id="map-canvas" class="map_part" src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=slp%20alameda&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">Powered by <a href="https://embedgooglemaps.com">embed google maps</a> and <a href="http://eucasinos.se/">eu casino</a></iframe>
     </div>
     <div>
     <Formulario/>

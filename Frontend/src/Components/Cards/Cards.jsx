@@ -3,12 +3,29 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useNavigate } from 'react-router-dom';
+
 
 const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, gameDesigner, gameReleaseDate }) => {
-  const [showModal, setShowModal] = useState(false);
 
+  const [showModal, setShowModal] = useState(false);
+  const [showNotLoggedModal, setShowNotLoggedModal] = useState(false);
+  const navigate = useNavigate();
   const handleClose = () => setShowModal(false);
-  const handleShow = () => setShowModal(true);
+  const handleCloseCart = () => setShowModal(false);
+  const handleCloseNotLogged = () => setShowNotLoggedModal(false);
+  const handleNotLogged = () => {
+    setShowNotLoggedModal(false); 
+    navigate('/LoginForm')
+    
+  }
+  const handleShow = () => {
+    if(localStorage.getItem('token') !== null){
+      setShowModal(true);
+    }else{
+      setShowNotLoggedModal(true)
+    }
+  }
 
   const addToCart = () => {
     // Creamos el objeto que representará el juego a agregar al carrito
@@ -57,7 +74,6 @@ const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, g
         </ListGroup>
         <Card.Body>
           <div style={{ marginBottom: '10px' }}> {/* Agregar un margen inferior */}
-            <Button variant="primary">Comprar</Button>
           </div>
           <Button variant="primary" onClick={addToCart}>Agregar al carrito</Button>
         </Card.Body>
@@ -70,10 +86,25 @@ const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, g
         <Modal.Body>El juego ha sido agregado al carrito exitosamente.</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
+            Continuar comprando
+          </Button>
+          <Button variant="primary" onClick={handleCloseCart}>
+            Ir al carrito
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showNotLoggedModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>No has iniciado sesion &#x1F625;</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Inicia sesion para agregar elementos al carrito !</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseNotLogged}>
             Cerrar
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Continuar comprando
+          <Button variant="primary" onClick={handleNotLogged}>
+          Iniciar sesion
           </Button>
         </Modal.Footer>
       </Modal>

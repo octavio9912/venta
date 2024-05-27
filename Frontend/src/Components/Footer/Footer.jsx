@@ -8,7 +8,7 @@ const Footer = () => {
     <footer>
       <div className="footer-content">
         <div className="GDL">
-          <h5>GDL Shop</h5>
+          <h5>JGL Shop</h5>
         </div>
 
         <div className="explore">

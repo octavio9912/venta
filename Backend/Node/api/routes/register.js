@@ -20,7 +20,7 @@ router.post('/', (req,res) => {
 /*If the content of the rows is greater than 0 save the results on 'data', otherwise send a reply with 'Invalid data'*/            
 
                 //console.log(JSON.stringify(rows[0].name));
-                let data = "inserted fields";
+                let data = "Usuario creado correctamente 😉";
 /*Encrypts the stored data on a variable called token with a secret word*/
 /*Send a reply with the encrypted token*/
                 res.json({'operation': data});
