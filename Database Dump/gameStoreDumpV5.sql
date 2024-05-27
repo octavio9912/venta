@@ -13,7 +13,7 @@ CREATE TABLE `accessories` (
   `accessoryDescription` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
   `offer` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`accessoryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) 
 
 
 LOCK TABLES `accessories` WRITE;
@@ -30,7 +30,7 @@ CREATE TABLE `consoles` (
   `consoleDescription` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
   `offer` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`consoleID`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+)
 
 
 LOCK TABLES `consoles` WRITE;
@@ -49,8 +49,7 @@ CREATE TABLE `games` (
   `gameDescription` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
   `offer` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`gameID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+) 
 
 LOCK TABLES `games` WRITE;
 INSERT INTO `games` VALUES (1,'God of War','https://i.pinimg.com/736x/2e/97/43/2e9743e1252fccdcd073575d7d2d2a3e.jpg','SIE Santa Monica Studio','David Jaffe','22 de marzo de 2005','Aventura, Acción','God of War es un videojuego de acción y aventuras desarrollado por Santa Monica Studio y publicado por Sony Computer Entertainment.',0),(2,'The Legend of Zelda: Breath of the Wild','https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg/220px-The_Legend_of_Zelda_Breath_of_the_Wild.jpg','Nintendo EPD','Hidemaro Fujibayashi','3 de marzo de 2017','Aventura, Acción','The Legend of Zelda: Breath of the Wild es un videojuego de acción-aventura de mundo abierto desarrollado por Nintendo.',0),(3,'Red Dead Redemption 2','https://image.api.playstation.com/cdn/UP1004/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png','Rockstar Games',' ','26 de octubre de 2018','Aventura, Acción','Red Dead Redemption 2 es un videojuego de acción-aventura western, en un mundo abierto y en perspectiva de primera y tercera persona.',0),(4,'Super Mario Odyssey','https://m.media-amazon.com/images/I/81sS-oqpkLS.jpg','Nintendo EPD','Kenta Motokura','27 de octubre de 2017','Aventura, Plataformas','Super Mario Odyssey es un videojuego de plataformas de mundo abierto para la Nintendo Switch, en el que Mario y Cappy emprenden un viaje por diversos reinos para salvar a la Princesa Peach de Bowser, quien planea casarse con ella.',0),(5,'Dark Souls III','https://image.api.playstation.com/cdn/UP0700/CUSA03388_00/v8JlD8KcQUtTqaLBmpFnj1ESRR5zMkLk.png','FromSoftware',' ','24 de marzo de 2016','Rol, Acción','Dark Souls III es un videojuego de rol de acción desarrollado por FromSoftware y distribuido por Bandai Namco Entertainment.',1),(6,'Minecraft','https://m.media-amazon.com/images/I/91K+4IJ2+ZL._AC_UF1000,1000_QL80_.jpg','Mojang Studios',' ','18 de noviembre de 2011','Construcción, Aventura','Minecraft es un videojuego de construcción, de tipo «mundo abierto» o sandbox creado originalmente por el sueco Markus Persson (conocido comúnmente como Notch), y posteriormente desarrollado por su empresa, Mojang Studios, y ahora por Microsoft Studios.',1),(7,'Grand Theft Auto V','https://products.eneba.games/resized-products/s29Db6ZBVLneuD0t66qnYRamvGDP3p8chLz-3IomxcU_350x200_1x-0.jpeg','Rockstar North',' ','17 de septiembre de 2013','Aventura, Acción','Grand Theft Auto V es un videojuego de acción-aventura de mundo abierto desarrollado por la compañía británica Rockstar North y distribuido por Rockstar Games.',1),(8,'Cyberpunk 2077','https://assets.xboxservices.com/assets/f4/75/f475ff8f-4217-4040-99fb-bf86ed0fccb4.jpg?n=Cyberpunk-2077_GLP-Page-Hero-0_1083x1222.jpg','CD Projekt',' ','10 de diciembre de 2020','Rol, Acción','Cyberpunk 2077 es un videojuego de rol desarrollado y publicado por CD Projekt. Está ambientado en el mundo abierto de Night City, una megalópolis obsesionada por el poder, el glamur y la modificación corporal.',1),(9,'FIFA 22','https://m.media-amazon.com/images/I/817dIPZKz9L._AC_UF1000,1000_QL80_.jpg','EA Vancouver',' ','1 de octubre de 2021','Deportes, Simulación','FIFA 22 es un videojuego de simulación de fútbol desarrollado y publicado por Electronic Arts como parte de la serie FIFA.',1),(10,'Death Stranding','https://image.api.playstation.com/vulcan/img/rnd/202010/2715/O0M4r1YyNK0x8KkmiKRiuQha.png','Kojima Productions',' ','8 de noviembre de 2019','Aventura, Acción','Death Stranding es un videojuego de acción-aventura desarrollado por Kojima Productions y publicado por Sony Interactive Entertainment para PlayStation 4 y 505 Games para Microsoft Windows.',1),(11,'Animal Crossing: New Horizons','https://m.media-amazon.com/images/I/81UfEdvf2kL._AC_UF1000,1000_QL80_.jpg','Nintendo EPD',' ','20 de marzo de 2020','Simulación, Aventura','Animal Crossing: New Horizons es un videojuego de simulación social desarrollado y publicado por Nintendo para la Nintendo Switch.',1),(12,'The Last of Us Part II','https://image.api.playstation.com/vulcan/img/rnd/202010/2618/w48z6bzefZPrRcJHc7L8SO66.png','Naughty Dog',' ','19 de junio de 2020','Aventura, Acción','The Last of Us Part II es un videojuego de acción-aventura y horror de supervivencia desarrollado por Naughty Dog y publicado por Sony Interactive Entertainment para PlayStation 4.',1);
@@ -63,7 +62,7 @@ CREATE TABLE `suggestions` (
   `suggestionMail` varchar(255) DEFAULT NULL,
   `suggestionContent` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`suggestionID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) 
 
 
 LOCK TABLES `suggestions` WRITE;
@@ -80,7 +79,7 @@ CREATE TABLE `users` (
   `expirationDate` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `ccv` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) 
 
 
 
