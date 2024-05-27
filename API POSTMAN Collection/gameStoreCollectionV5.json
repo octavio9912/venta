@@ -207,6 +207,33 @@
 				"description": "Permite a los usuarios autenticarse y obtener un token JWT que puede ser utilizado para acceder a los otros endpoints protegidos de la\n\n\\-La solicitud requiere los parámetros \\`mail\\` y \\`password\\` en el cuerpo de la solicitud.\n\n\\- La respuesta incluye un token JWT que debe ser usado en los headers de autorización para las solicitudes posteriores.”\n\n**Ejemplo de Respuesta Exitosa:**\n\n``` json\njsonCopy code{\n    \"operation\": \"inserted fields\"\n}\n\n ```"
 			},
 			"response": []
+		},
+		{
+			"name": "Contact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"mi nombre\",\n    \"mail\": \"armandoh.ibarra@gmail.com\",\n    \"suggestion\": \"Lorem ipsum\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/contact",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"contact"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
