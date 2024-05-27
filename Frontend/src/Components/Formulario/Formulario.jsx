@@ -75,7 +75,7 @@ const Formulario = () => {
 
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Sugerencia enviada correctamente ! &#x1F625;</Modal.Title>
+          <Modal.Title>Sugerencia enviada correctamente ! &#x1F631;</Modal.Title>
         </Modal.Header>
         <Modal.Body>Muchas gracias por tus comentarios!</Modal.Body>
         <Modal.Footer>
