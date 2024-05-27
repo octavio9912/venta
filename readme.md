@@ -5,7 +5,7 @@
 Para importar la base de datos MySQL, puedes hacerlo desde PHPMyAdmin utilizando el botón de importar, o si prefieres la línea de comandos, ejecuta el siguiente comando:
 
 ```mysql
-mysql -u tu_usuario -p tu_base_de_datos < gameStorev4.sql
+mysql -u tu_usuario -p gamestore < gameStorev6.sql
 ```
 
 Asegúrate de reemplazar `tu_usuario` y `tu_base_de_datos` con los valores correspondientes.
