@@ -17,7 +17,7 @@
 
 DROP DATABASE IF EXISTS `gamestore`;
 CREATE DATABASE `gamestore`;
-
+USE `gamestore`;
 --
 -- Table structure for table `accessories`
 --
@@ -120,7 +120,7 @@ CREATE TABLE `suggestions` (
   `suggestionMail` varchar(255) DEFAULT NULL,
   `suggestionContent` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`suggestionID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
