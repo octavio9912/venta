@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import './Formulario.css'; // Importar estilos CSS
 import sendForm from '../../API/sendForm'
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
 
 const Formulario = () => {
   const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
   const [sugerencia, setSugerencia] = useState('');
-
+  const [showModal, setShowModal] = useState(false);
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => {
+    setShowModal(true)  
+    }
+  
   const handleNombreChange = (event) => {
     setNombre(event.target.value);
   };
@@ -63,10 +70,24 @@ const Formulario = () => {
             required
           />
         </label>
-        <button type="submit">Enviar</button>
+        <button onClick={handleShow} type="submit">Enviar</button>
       </form>
+
+      <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Sugerencia enviada correctamente ! &#x1F625;</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Muchas gracias por tus comentarios!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
-  );
+   
+);
 };
+
 
 export default Formulario;
