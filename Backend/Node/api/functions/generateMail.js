@@ -55,13 +55,13 @@ const generateHtml = (name, mail, suggestion) => {
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>🛎️📨 Nueva sugerencia recivida! 🛎️📨</h1>
+                    <h1>🛎️📨 Nueva sugerencia recibida! 🛎️📨</h1>
                 </div>
                 <div class="content">
                     <p><span>From:</span> ${mail}</p>
                     <p><span>To:</span> armandoh.ibarra@gmail.com</p>
                     <p><span>Suggestion:</span></p>
-                    <p>${`${name} ' envido una sugerencia: ' ${suggestion}`}</p>
+                    <p>${`${name}  envio una sugerencia:  ${suggestion}`}</p>
                 </div>
                 <div class="footer">
                     <p>&copy; 2024 Your Company. All rights reserved.</p>

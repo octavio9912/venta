@@ -20,7 +20,7 @@ console.log(process.env.MAIL, process.env.PASSWORD);
 
 
 const setMailOptions = (name, mail, suggestion) => {
-    const htmlContent = generateHTML(name, process.env.MAIL, suggestion);
+    const htmlContent = generateHTML(name, mail, suggestion);
     mailOptions = {
         from: mail,
         to: process.env.MAIL,
