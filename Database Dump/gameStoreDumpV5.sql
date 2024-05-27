@@ -1,5 +1,6 @@
-CREATE DATABASE gamestore;
-USE gamestore;
+DROP DATABASE IF EXISTS `gamestore`;
+CREATE DATABASE `gamestore`;
+USE `gamestore`;
 
 DROP TABLE IF EXISTS `accessories`;
 
