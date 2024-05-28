@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import signin from '../../API/signin';
 import './Registrate.css'; // Asegúrate de tener los estilos necesarios
 import { Button, Modal } from 'antd';
+import { emailRegex } from '../RegexMail/RegexMail';
+
 const Register = () => {
     const [modal, contextHolder] = Modal.useModal();
     const navigate = useNavigate();
@@ -15,6 +17,7 @@ const Register = () => {
     const [ccv, setCcv] = useState('');
     const [showModal, setShowModal] = useState(false); // Estado para controlar la visibilidad del modal
     const redireccion = '/inicio';
+    const [errorMessage, setErrorMessage] = useState('');
 
 
 
@@ -34,8 +37,8 @@ const Register = () => {
             if (password === confirmPassword) {
                 clearInterval(timer);
                 instance.destroy();
-            navigate(redireccion);
-            }else{
+                navigate(redireccion);
+            } else {
                 clearInterval(timer);
                 instance.destroy();
             }
@@ -44,21 +47,25 @@ const Register = () => {
     };
 
     const handlerSignin = async () => {
-        try {
-            if (password === confirmPassword) {
-                const respuesta = await signin(mail, completeName, password, creditCard, expirationDate, ccv);
-                if (respuesta.data) {
-                    console.log({ "Respuesta del backend": respuesta.data });
-                    countDown(`Creacion del usuario ${completeName} exitosa !`, respuesta.data.operation);
+        if (emailRegex.test(mail)) {
+            try {
+                if (password === confirmPassword) {
+                    const respuesta = await signin(mail, completeName, password, creditCard, expirationDate, ccv);
+                    if (respuesta.data) {
+                        console.log({ "Respuesta del backend": respuesta.data });
+                        countDown(`Creacion del usuario ${completeName} exitosa !`, respuesta.data.operation);
 
+                    } else {
+                        console.log('-----' + respuesta.data);
+                    }
                 } else {
-                    console.log('-----' + respuesta.data);
+                    countDown(`Error !`, "Las contraseñas no son iguales!")
                 }
-            }else{
-                countDown(`Error !`, "Las contraseñas no son iguales!")
+            } catch (error) {
+                console.log(error);
             }
-        } catch (error) {
-            console.log(error);
+        } else {
+            setErrorMessage('El email no es valido')
         }
     };
     const handlerMail = (event) => setMail(event.target.value);
@@ -75,7 +82,7 @@ const Register = () => {
             <div className='wrapper'>
                 <div className="bordered-div">
                     <h1>Registrate</h1>
-
+                    {errorMessage && <p className="error-message">{errorMessage}</p>}
                     <div className='input-box'>
                         <label>Correo Electrónico:</label>
                         <input value={mail} onChange={handlerMail} type='email' placeholder='Correo' required />

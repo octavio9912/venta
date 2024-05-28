@@ -3,6 +3,7 @@ import './LoginForm.css';
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import login from '../../API/login';
+import { emailRegex } from '../RegexMail/RegexMail';
 
 const LoginForm = () => {
     const navigate = useNavigate();
@@ -12,24 +13,28 @@ const LoginForm = () => {
     const redireccion = '/inicio';
 
     const handlerLogin = async () => {
-        try {
-            const respuesta = await login(mail, password);
-            if (respuesta.data.token != null) {
-                console.log({ "Respuesta del backend": respuesta.data });
-                localStorage.setItem('token', respuesta.data.token);
-                localStorage.setItem('user', respuesta.data.user);
-                localStorage.setItem('credit-card', respuesta.data.creditCard);
-                localStorage.setItem('expiration-date', respuesta.data.expirationDate);
-                localStorage.setItem('ccv', respuesta.data.ccv);
-                setTimeout(() => {
-                    navigate(redireccion);
-                }, 200);
-            } else {
-                setErrorMessage('Usuario o contraseña incorrectos');
+        if (emailRegex.test(mail)) {
+            try {
+                const respuesta = await login(mail, password);
+                if (respuesta.data.token != null) {
+                    console.log({ "Respuesta del backend": respuesta.data });
+                    localStorage.setItem('token', respuesta.data.token);
+                    localStorage.setItem('user', respuesta.data.user);
+                    localStorage.setItem('credit-card', respuesta.data.creditCard);
+                    localStorage.setItem('expiration-date', respuesta.data.expirationDate);
+                    localStorage.setItem('ccv', respuesta.data.ccv);
+                    setTimeout(() => {
+                        navigate(redireccion);
+                    }, 200);
+                } else {
+                    setErrorMessage('Usuario o contraseña incorrectos');
+                }
+            } catch (error) {
+                console.log(error);
+                setErrorMessage('Error en la conexión al servidor');
             }
-        } catch (error) {
-            console.log(error);
-            setErrorMessage('Error en la conexión al servidor');
+        } else {
+            setErrorMessage('El email no es valido')
         }
     };
 
