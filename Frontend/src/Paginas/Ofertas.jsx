@@ -65,6 +65,7 @@ if (isLoading) { // Comprueba si isLoading es true
           gameDeveloper={item.gameDeveloper}
           gameDesigner={item.gameDesigner}
           gameReleaseDate={item.gameReleaseDate}
+          price={item.price}
         />
       ));
     }
@@ -78,6 +79,7 @@ if (isLoading) { // Comprueba si isLoading es true
           consoleManufacturer={item.consoleManufacturer}
           consoleCategories={item.consoleCategories}
           consoleDescription={item.consoleDescription}
+          price={item.price}
         />
       ));
     }
@@ -91,6 +93,7 @@ if (isLoading) { // Comprueba si isLoading es true
         accessoryManufacturer={item.accessoryManufacturer}
         accessoryCategories={item.accessoryCategories}
         accessoryDescription={item.accessoryDescription}
+        price={item.price}
         />
       ));
     }

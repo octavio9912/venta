@@ -63,6 +63,7 @@ const Categorias = () => { // Define un componente funcional llamado Categorias
           gameDeveloper={item.gameDeveloper}
           gameDesigner={item.gameDesigner}
           gameReleaseDate={item.gameReleaseDate}
+          price={item.price}
         />
       ));
     }
@@ -76,6 +77,7 @@ const Categorias = () => { // Define un componente funcional llamado Categorias
           consoleManufacturer={item.consoleManufacturer}
           consoleCategories={item.consoleCategories}
           consoleDescription={item.consoleDescription}
+          price={item.price}
         />
       ));
     }
@@ -89,6 +91,7 @@ const Categorias = () => { // Define un componente funcional llamado Categorias
         accessoryManufacturer={item.accessoryManufacturer}
         accessoryCategories={item.accessoryCategories}
         accessoryDescription={item.accessoryDescription}
+        price={item.price}
         />
       ));
     }

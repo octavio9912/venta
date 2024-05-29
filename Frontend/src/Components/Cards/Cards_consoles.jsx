@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
 
-const BasicExample2 = ({ consoleID, consoleTitle, consoleImage, consoleManufacturer, consoleCategories, consoleDescription }) => {
+const BasicExample2 = ({ consoleID, consoleTitle, consoleImage, consoleManufacturer, consoleCategories, consoleDescription, price }) => {
   const [showModal, setShowModal] = useState(false);
   const [showNotLoggedModal, setShowNotLoggedModal] = useState(false);
   const navigate = useNavigate();
@@ -35,7 +35,8 @@ const BasicExample2 = ({ consoleID, consoleTitle, consoleImage, consoleManufactu
       consoleImage,
       consoleManufacturer,
       consoleCategories,
-      consoleDescription
+      consoleDescription,
+      price
     };
 
     // Obtenemos el carrito actual del localStorage
@@ -70,6 +71,7 @@ const BasicExample2 = ({ consoleID, consoleTitle, consoleImage, consoleManufactu
         <ListGroup className="list-group-flush">
           <ListGroup.Item>Manofactura: {consoleManufacturer}</ListGroup.Item>
           <ListGroup.Item>Categoria: {consoleCategories}</ListGroup.Item>
+          <ListGroup.Item>Precio: {price}</ListGroup.Item> 
         </ListGroup>
         <Card.Body>
           <div style={{ marginBottom: '10px' }}> {/* Agregar un margen inferior */}

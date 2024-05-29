@@ -1,29 +1,46 @@
 /* Carrito.css */
 
 .carrito-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .carrito-item {
-    background-color: #ffffff; 
-    border-radius: 5px;
-    margin-bottom: 20px;
-    padding: 10px;
-  }
-  
-  .carrito-item img {
-    max-width: 100px;
-    max-height: 100px;
-    margin-right: 10px;
-  }
-  
-  .carrito-item h3 {
-    margin-top: 0;
-  }
-  
-  .carrito-item p {
-    margin: 5px 0;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.carrito-item {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.carrito-item img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 10px;
+}
+
+.carrito-item h3 {
+  margin-top: 0;
+}
+
+.carrito-item p {
+  margin: 5px 0;
+}
+
+.carrito-item .price {
+  font-size: 2em;  /* Tamaño de fuente grande */
+  font-weight: bold;  /* Negritas */
+  color: #000000;  /* Color negro (puedes cambiarlo según tu preferencia) */
+}
+
+/* Nueva clase para la sección del total del carrito */
+.carrito-total {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.carrito-total h3 {
+  background-color: #ffffff;
+  font-size: 1.5em;
+  font-weight: bold;
+}

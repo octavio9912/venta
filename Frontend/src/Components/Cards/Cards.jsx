@@ -5,8 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
 
-
-const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, gameDesigner, gameReleaseDate }) => {
+const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, gameDesigner, gameReleaseDate, price }) => {
 
   const [showModal, setShowModal] = useState(false);
   const [showNotLoggedModal, setShowNotLoggedModal] = useState(false);
@@ -38,7 +37,8 @@ const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, g
       gameImage,
       gameDeveloper,
       gameDesigner,
-      gameReleaseDate
+      gameReleaseDate,
+      price
     };
 
     // Obtenemos el carrito actual del localStorage
@@ -74,6 +74,7 @@ const BasicExample = ({ gameID, gameImage, gameTitle, gameText, gameDeveloper, g
           <ListGroup.Item>Desarrollador: {gameDeveloper}</ListGroup.Item>
           <ListGroup.Item>Diseñador: {gameDesigner}</ListGroup.Item>
           <ListGroup.Item>Fecha de estreno inicial: {gameReleaseDate}</ListGroup.Item>
+          <ListGroup.Item>Precio: {price}</ListGroup.Item> {/* Estilo en línea para cambiar el color del texto */}
         </ListGroup>
         <Card.Body>
           <div style={{ marginBottom: '10px' }}> {/* Agregar un margen inferior */}
